@@ -1,0 +1,33 @@
+package Hello;
+import java.util.Scanner;
+public class Main 
+{
+	private static Scanner in;
+	public static void main(String[] args) 
+	{
+		Scanner in = new Scanner(System.in);
+		int a=0;//输入数字
+		int b=0;//偶数个数
+		int c=0;//奇数个//数
+		
+			
+			do
+			{
+				a=in.nextInt();
+				if(a!=-1)
+				{
+					if(a%2==0)
+					{
+						b=b+1;
+					}
+					else
+					{
+						c=c+1;
+					}
+				}	
+			}while(a>0&&a<100000);
+		
+		System.out.print(c+" ");
+		System.out.print(b);
+	}
+}
