@@ -1,0 +1,98 @@
+package hi;
+
+import java.util.Scanner;
+
+public class Main{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+//        Scanner in=new Scanner(System.in);
+//		int a=0;
+//		a=in.nextInt();//输入数字
+//		int b=0;//纪录位数
+//		int c=0;//记录数字
+//		int d=0; 
+//		int e=-1;
+//		int f=-1;
+//        int g=0;
+//		int h=0;
+//		int i=0;
+//		if(a>=0&&a<=1000000)
+//		{
+// 			do{
+//				b=b+1;
+//				f=a%10;
+//				a=a/10;
+//				g=g+1;
+//				if(b%2==f%2)
+//				{
+//					c=1;
+//				}	
+//				else
+//				{
+//					c=0;
+//				}
+//				h=(int) (h+c*Math.pow(10, g));
+//			}while(a>0);
+// 			
+// 			do{   
+// 				e=e+1;
+// 				i=h%10;
+// 				h=h/10;
+// 				d=(int) (d+i*Math.pow(2, e));			
+// 			}while(h>0);
+// 			System.out.println(d);
+//		}
+//		
+		Scanner in = new Scanner(System.in);
+
+	      int a=0;
+
+	      int count = 0;//位数
+
+	      int sum = 0;
+
+	      int m;
+
+	      int number = in.nextInt();
+
+	      if(number>=0&&number<=1000000)
+
+	      {
+
+		   	   do
+
+		      {
+
+		   	   a = number%10;
+
+		   	   number = number/10;
+
+		   	   count =count +1;  
+
+		   	   if(a%2==0&count%2==0||a%2!=0&count%2!=0)
+
+		   	   {
+
+		   		  m=1;
+
+		   	   }
+
+		   	   else
+
+		   	   {
+
+		   		   m=0;
+
+		   	   }
+
+		   	   sum+=Math.pow(2, count-1)*m; 
+
+		   	  }while(number!=0);
+
+		     }
+
+	       System.out.print(sum);
+	}
+
+}
