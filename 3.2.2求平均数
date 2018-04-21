@@ -1,0 +1,39 @@
+package hi;
+
+import java.util.Scanner;
+
+public class Main{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+        System.out.println("请输入求平均数的数字(以-1结尾)");
+        Scanner in=new Scanner(System.in);
+        int a;//输入数字
+        int count=0;//计数
+        int sum=0;//求和
+        //方法一 while循环
+//        a=in.nextInt();
+//        while(a!=-1)
+//        { 
+//        	if(a!=-1)
+//        	{
+//        	count=count+1;
+//        	sum=sum+a;
+//        	a=in.nextInt();
+//        	}
+//        }
+         //方法二 do-while循环
+        do
+        {	a=in.nextInt(); 
+        	if(a!=-1)
+        	{
+        	count=count+1;
+        	sum=sum+a;
+        	}
+        }while(a!=-1);
+        if(count>0)
+        {
+        	System.out.println((double)sum/count);
+        }
+        }
+}
