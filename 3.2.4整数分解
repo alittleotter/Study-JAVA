@@ -1,0 +1,25 @@
+package hi;
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+        Scanner in=new Scanner(System.in);
+        int number=0;
+        number=in.nextInt();
+        int a=0;
+//        do{
+//        	a=number%10;
+//        	System.out.print(a);
+//        	number=number/10;
+//        }while(number>0);
+        int result=0;
+        do{
+        	a=number%10;
+        	result=result*10+a;
+        	number=number/10;
+        }while(number>0);
+    	System.out.print(result);
+     }
+}
