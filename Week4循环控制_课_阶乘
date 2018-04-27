@@ -1,0 +1,58 @@
+package hi;
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		
+//while可行
+//        Scanner in=new Scanner(System.in);
+//        int number=0;
+//        number=in.nextInt();
+//        int count=1;
+//        int factor=1;
+//        while(count<=number)
+//        {
+//        	factor*=count;
+//        	count++;
+//        }
+//        System.out.println(factor);
+		
+//for循环
+//        Scanner in=new Scanner(System.in);
+//        int number=0;
+//        number=in.nextInt();
+//        int i;
+//        int factor=1;
+//        for(i=1;i<=number;i=i+1)
+//        {
+//        	factor*=i;
+//        }
+//        System.out.println(factor);
+		
+//i的定义可以放到循环里面
+      Scanner in=new Scanner(System.in);
+      int number=0;
+      number=in.nextInt();
+      int factor=1;
+      for(int i=1;i<=number;i=i+1)
+//    	  ;
+    	  //千万不要在for后面加分号；
+      {
+      	factor*=i;
+      }
+//      i=0;
+      //不能给i值
+      System.out.println(factor);
+//循环次数
+      //for(i=0;i<n;i=i+1) 执行n次
+      //for(i=1;i<=n;i=i+1) 执行n次
+//循环选择 
+      //for是有确定次数
+      
+      
+      //i=i+1;
+      //i++;
+     }
+}
