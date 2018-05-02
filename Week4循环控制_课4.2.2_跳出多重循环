@@ -1,0 +1,57 @@
+package hi;
+import java.sql.Savepoint;
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+	//笨办法跳出多重循环
+//		Scanner in=new Scanner(System.in);
+//		int amount=in.nextInt();
+//		int isExit=0;
+//		for(int one=0;one<=amount;one++)
+//		{
+//			for(int five=0;five<=amount/5;five++)
+//			{
+//				for(int ten=0;ten<=amount/10;ten++)
+//				{
+//					for(int twenty=0;twenty<=amount/20;twenty++)
+//					{
+//						if(one+five*5+ten*10+twenty*20==amount)
+//						{
+//							System.out.println("1元："+one+" 5元："+five+" 10元："+ten+" 20元："+twenty);
+//							isExit=1;
+//							break; 
+//							//只能跳出一层	
+//						}
+//					}
+//					if(isExit==1) break;
+//				}
+//				if(isExit==1) break;
+//			}
+//			if(isExit==1) break;
+//		}
+	//标号法
+		Scanner in=new Scanner(System.in);
+		int amount=in.nextInt();
+		OUT:
+		for(int one=0;one<=amount;one++)
+		{
+			for(int five=0;five<=amount/5;five++)
+			{
+				for(int ten=0;ten<=amount/10;ten++)
+				{
+					for(int twenty=0;twenty<=amount/20;twenty++)
+					{
+						if(one+five*5+ten*10+twenty*20==amount)
+						{
+							System.out.println("1元："+one+" 5元："+five+" 10元："+ten+" 20元："+twenty);
+							break OUT;
+						}
+					}
+				}
+			}
+		}
+     }
+}
