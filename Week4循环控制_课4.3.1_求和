@@ -1,0 +1,50 @@
+package hi;
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+        Scanner in=new Scanner(System.in);
+        int number;
+        number=in.nextInt();
+        double sum=0.0;
+//1+1/2+1/3+...+1/n=?
+						//        for(int i=1;i<=number;i++)
+						//        {
+						//        	sum += 1.0/i ;
+						//        }
+						//        System.out.println(sum);
+						//        System.out.printf("%.2f",sum);
+        
+//1-1/2+1/3+...+1/n=?
+//方法一：
+						//        for(int i=1;i<=number;i++)
+						//        {	
+						//        	if(i%2==0)
+						//        	{
+						//        		sum+=-1.0/i;
+						//        	}
+						//        	else
+						//        	{
+						//        		sum+=1.0/i;
+						//        	}
+						//        }
+						//        System.out.println(sum);
+//方法二：
+									int sign=1;
+						//			for(int i=1;i<=number;i++)//!!!!!!@@@@不能让i=0@@@@@@！！！！
+						//			{
+						//				sum+=sign*1.0/i;
+						//				sign=-sign;
+						//			}
+						//			System.out.println(sum);
+		for(int i=1;i<=number;i++,sign=-sign)
+        {
+        	sum+=sign*1.0/i;
+
+        }
+        System.out.println(sum);
+	}
+}
+
