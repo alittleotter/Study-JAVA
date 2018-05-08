@@ -23,16 +23,20 @@ public class Main
 			cnt++;//计个数
 			n=in.nextInt();
 		}
-		double average=sum/cnt;//求平均
-		System.out.println(sum);
-		System.out.println(cnt);
-		System.out.println(average);
-		for(int i=0;i<cnt;i++)//找大于
+		if(cnt>0)
 		{
-			if(numbers[i]>average)
+			double average=sum/cnt;//求平均
+			System.out.println(sum);
+			System.out.println(cnt);
+			System.out.println(average);
+			for(int i=0;i<cnt;i++)//找大于
 			{
-				System.out.println(numbers[i]+" ");
+				if(numbers[i]>average)
+				{
+					System.out.println(numbers[i]+" ");
+				}
 			}
+
 		}
 	}
 }
