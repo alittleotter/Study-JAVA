@@ -1,0 +1,142 @@
+package hi;
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Scanner in=new Scanner(System.in);
+		int number;
+		number=in.nextInt();
+		int number1=number;
+		if(number==0)
+		{
+			System.out.print("ling");
+		}
+		else
+		{
+			if(number<0)
+			{
+				System.out.print("fu ");
+				number=-number;
+				number1=-number1;
+			}
+			int weishu=1;
+			while(number>9)
+			{
+				number/=10;
+				weishu*=10;
+			}
+		    for(int yushu;weishu>=1;weishu/=10)
+			{
+		    	yushu=number1/weishu;
+				number1%=weishu;
+				switch(yushu)
+                {
+                    case 1:
+                    {
+                        System.out.print("yi");
+                        break;
+                    }
+                    case 2:
+                    {
+                        System.out.print("er");
+                        break;
+                    }
+                    case 3:
+                    {
+                        System.out.print("san");
+                        break;
+                    }
+                    case 4:
+                    {
+                        System.out.print("si");
+                        break;
+                    }
+                    case 5:
+                    {
+                        System.out.print("wu");
+                        break;
+                    }
+                    case 6:
+                    {
+                        System.out.print("liu");
+                        break;
+                    }
+                    case 7:
+                    {
+                        System.out.print("qi");
+                        break;
+                    }
+                    case 8:
+                    {
+                        System.out.print("ba");
+                        break;
+                    }
+                    case 9:
+                    {
+                        System.out.print("jiu");
+                        break;
+                    }
+                    case 0:
+                    {
+                        System.out.print("ling");
+                        break;
+                    }
+                }
+				if(weishu>=10)
+				{
+					System.out.print(" ");
+				}
+			}
+		}
+	}
+}
+
+	//我的错误做法
+//import java.util.Scanner;
+//public class Main
+//{
+//	public static void main(String[] args) 
+//	{
+//		// TODO Auto-generated method stub
+//		Scanner in=new Scanner(System.in);
+//		int number;
+//		number=in.nextInt();
+//		int number1=number;
+//		if(number==0)
+//		{
+//			System.out.print("ling");
+//		}
+//		
+//		else
+//		{
+//			if(number<0)
+//			{
+//				System.out.print("fu ");
+//				number=-number;
+//				number1=-number1;
+//			}
+//			int weishu=10;
+//			int yushu;
+//			while(number>9)
+//			{
+//				number/=10;
+//				weishu*=10;
+//			}
+								//应该用for，知道几位数，知道要做几次循环
+//		    while(weishu>=10)
+//			{
+//				weishu/=10;
+//				yushu=number1/weishu;
+//				switch(yushu)
+//				System.out.print(" ");		//特别是这句，要判断位数再决定要不要输出空格
+//												if (i>=10)
+//												{
+//												    System.out.print(" ");
+//												}
+//				number1/=10;			//还有这句，应该n=n%i;才能得到下一个数。否则这样是整数分解了
+//			}
+//		}
+//	}
+//}
