@@ -1,0 +1,36 @@
+package hi;
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Scanner in=new Scanner(System.in);//输入初始化
+//		numbers[-1]=0;
+//		numbers[100]=0;//编译器不会检查下标是否有效、但运行时会报错
+		int cnt=0;
+		cnt =in.nextInt();//个数
+		double sum=0;
+		if(cnt>0)//别忘了判断cnt
+		{
+			int[]numbers =new int[cnt];//创建数组
+			for(int i=0;i<cnt;i++)
+			{
+				numbers[i]=in.nextInt();
+				sum+=numbers[i];//求和
+			}
+			double average=sum/cnt;//求平均
+			System.out.println(cnt);
+			System.out.println(sum);
+			System.out.println(average);
+//			for(int a=0;a<cnt;a++)//找大于
+			for(int a=0;a<numbers.length;a++)//用length找大于，具有可拓展性 
+			{
+				if(numbers[a]>average)
+				{
+					System.out.println(numbers[a]+" ");
+				}
+			}
+		}
+	}	
+}
