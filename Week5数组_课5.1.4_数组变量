@@ -1,0 +1,68 @@
+package hi;
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+		Scanner in=new Scanner(System.in);//输入初始化
+//		int[] numbers= {1,2,3,4,5,6,7,8};//直接初始化数组
+//		
+//		System.out.println(numbers.length);
+//		
+//		for(int i=0;i<numbers.length;i++)
+//		{
+//			System.out.print(numbers[i]+" ");
+//		}
+		
+//	//数组变量(a(b))赋值
+//	//(a(b))是数组的管理者
+//		int[]a=new int[10];
+//		a[0]=5;
+//		int[]b=a;
+////		System.out.println(a[0]);
+//		b[0]=16;
+////		System.out.println(b[0]);
+//		System.out.println(a[0]);
+		
+//		int []a= {1,2};
+//		int []b=a;
+//		System.out.print(a==b);//true
+		
+//		int []b= {2,3};
+//		System.out.print(a==b);//false
+
+//		int []b= {1,2};
+//		System.out.print(a==b);//false
+		
+		//复制数组必须遍历
+//		int []a= {1,2};
+//		int []b=new int[a.length];
+//		for(int i=0;i<a.length;i++)
+//		{
+//			b[i]=a[i];
+//		}
+//		for(int c=0;c<b.length;c++)
+//		{
+//			System.out.print(b[c]+" ");
+//		}
+		
+		//相对应的元素是否相同
+		int []a= {1,2};
+		int []b=new int[a.length];
+		for(int i=0;i<a.length;i++)
+		{
+			b[i]=a[i];
+		}
+		boolean iseuq=true;
+		for(int c=0;c<b.length;c++)
+		{
+			if(a[c]!=b[c])
+			{
+				iseuq=false;
+				break;
+			}
+		}
+		System.out.println(iseuq);
+	}	
+}
