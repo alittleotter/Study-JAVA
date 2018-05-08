@@ -8,6 +8,10 @@ public class Main
 //有安全隐患
 		Scanner in=new Scanner(System.in);//输入初始化
 		int[]numbers =new int[100];//创建数组
+//		numbers[0]=1.0;//类型不匹配
+//		int[]numbers =new int[100.1];//类型不匹配
+//		int[]numbers =new int[];//个数必须给出
+//		int[100]numbers =new int[100];//语法错误
 		int n=0;
 		n=in.nextInt();//输入数字
 		double sum=0.0;
