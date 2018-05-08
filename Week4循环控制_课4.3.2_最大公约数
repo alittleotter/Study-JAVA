@@ -1,0 +1,50 @@
+package hi;
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) 
+	{
+		// TODO Auto-generated method stub
+//枚举法
+//		Scanner in=new Scanner(System.in);
+//		int n1,n2;
+//		n1=in.nextInt();
+//		n2=in.nextInt();
+//		int min;
+//		int gongyueshu=1;
+//		{
+//			if(n1>n2)
+//			{
+//				min=n2;
+//			}
+//			else
+//			{
+//				min=n1;
+//			}
+//		}
+//		for(int i=2;i<=min;i++)//i<=a&&i<=b;
+//		{
+//			if(n1%i==0&&n2%i==0)
+//			{
+//				gongyueshu=i;
+//			}
+//		}
+//		System.out.println(gongyueshu);
+		
+//辗转相除法
+		Scanner in=new Scanner(System.in);
+		int n1,n2;
+		n1=in.nextInt();
+		n2=in.nextInt();
+		int r;//余数
+//		int gcd;
+		while(n2!=0)
+		{
+			r=n1%n2;
+			n1=n2;
+			n2=r;
+		}
+//		gcd=n1;
+		System.out.println(n1);
+	}
+}
