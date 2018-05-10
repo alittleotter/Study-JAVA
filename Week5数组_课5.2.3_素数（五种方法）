@@ -1,37 +1,181 @@
+package Hello;
 import java.util.Scanner;
-public class Hello 
-{
-	/**
-	 * @param args
-	 */
+public class Hello {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-//方法一：从2到x-1测试是否可以被整除
-	//对于n要循环n-1遍历
-	//当n很大时，就可以被看做要n遍
-		Scanner in= new Scanner(System.in);
-		int x=in.nextInt();
-		boolean isPrime=true;
-		if(x==1)
+////方法一：从2到x-1测试是否可以被整除
+//	//对于n要循环n-1遍历
+//	//当n很大时，就可以被看做要n遍
+//		Scanner in= new Scanner(System.in);
+//		int x=in.nextInt();
+//		boolean isPrime=true;
+//		if(x==1)
+//		{
+//			isPrime=false;
+//		}
+//		for(int i=2;i<x;i++)
+//		{
+//			if(x%i==0)
+//			{
+//				isPrime=false;
+//				break;
+//			}
+//		}
+//		if(isPrime)
+//		{
+//			System.out.println(x+"是素数");
+//		}
+//		else
+//		{
+//			System.out.println(x+"不是素数");
+//		}
+		
+////方法二：去掉偶尔后，从3到x-1，每次加2
+//	//如果x是偶数，立刻
+//	//否则要循环（n-3）/2+1遍
+//	//当n很大时就是n/2遍
+//		Scanner in= new Scanner(System.in);
+//		int x=in.nextInt();
+//		boolean isPrime=true;
+//		if(x==1||x%2==0&&x!=2)//(x能被2整除，并且x不是2，因为2是素数)
+//		{
+//			isPrime=false;//则不是素数，1也不是
+//		}
+//		else
+//		{
+//			for(int i=3;i<x;i+=2)//因为2的倍数已经排除，所以从3开始循环
+//			{
+//				if(x%i==0)
+//				{
+//					isPrime=false;
+//					break;
+//				}
+//			}
+//		}
+//		System.out.println(isPrime);
+		
+////方法三：无须到x-1，到sqrt（x）就够了
+//	//只需要循环sqrt（x）遍
+//		Scanner in= new Scanner(System.in);
+//		int x=in.nextInt();
+//		boolean isPrime=true;
+//		if(x==1||x%2==0&&x!=2)
+//		{
+//			isPrime=false;
+//		}
+//		else
+//		{	
+//			for(int i=3;i<Math.sqrt(x);i+=2)
+//			{
+//				if(x%i==0)
+//				{
+//					isPrime=false;
+//					break;
+//				}
+//			}
+//		}
+//		System.out.println(isPrime);
+		
+//方法四：判断是否能被已知的且<x的素数整除(构造前50个素数的表)
+		//我的错误做法
+////		Scanner in= new Scanner(System.in);
+////		int cnt=1;//int cnt=0错误
+////		int [] Primes=new int[50];
+////		Primes[0]=2;//!!!
+////		put:
+////		for(int x=3;Primes.length<50;x++,cnt++)
+////		{
+////			for(int i=2;i<x;i++)
+////			{
+////				if(i%x==0)
+////				{
+////					Primes[cnt]=x;
+////					continue put;
+////				}
+////			}
+////		}
+////		for(int b=0;b<Primes.length;b++)
+////		{
+////			System.out.println(Primes[b]);
+////		}
+	//老师的正确方法：
+//		Scanner in= new Scanner(System.in);
+//		int cnt=1;//int cnt=0错误
+//		int [] Primes=new int[50];
+//		Primes[0]=2;//!!!
+//		put:
+//		for(int x=3;cnt<50;x++)
+//		{
+//			for(int i=0;i<cnt;i++)//i表示素数的标号
+//			{
+//				if(x%Primes[i]==0)
+//				{
+//					continue put;
+//				}
+//			}
+//			Primes[cnt++]=x;
+//		}
+//		for(int k:Primes)
+//		{
+//			System.out.println(k+" ");
+//		}
+		
+//方法五：构造素数表
+		//欲构造n以内的素数表（思路）：
+		//1.令x为2；
+		//2.将2x、3x、4x直至ax<n的数标记为非素数；
+		//3.令x为下一个没有被标记为非素数的数，重复2；直到所有的数都已经尝试完毕
+		
+		//欲构造n以内的素数表（实际操作）：
+		//1.创建prime为boolean[n]，初始化其所有元素为true，prime[x]为ture表示x是素数
+		//2.令x=2；
+		//3.如果x是素数，则对于（i=2;x*i<n;i++）令prime[i*x]=false
+		//4.令x++，如果x<n,重复3，否则结束
+//		boolean []primes=new boolean[100];
+//		for(int i=0;i<primes.length;i++)
+//		{
+//			primes[i]=true;
+//		}
+//		for(boolean k:primes)
+//		{
+//			System.out.print(k+" ");
+//		}
+//		System.out.println(" ");
+//		for(int x=2;x<primes.length;x++)
+//		{
+//			if(primes[x])
+//			{
+//				for(int i=2;x*i<primes.length;i++)
+//				{
+//					primes[i*x]=false;
+//				}
+//			}
+//		}
+//		for(boolean k:primes)
+//		{
+//			System.out.print(k+" ");
+//		}
+		boolean []primes=new boolean[100];//初始化为false
+		for(int i=0;i<primes.length;i++)
 		{
-			isPrime=false;
+			primes[i]=true;
 		}
-		for(int i=2;i<x;i++)
+		for(int x=2;x<primes.length;x++)
 		{
-			if(x%i==0)
+			if(primes[x])
 			{
-				isPrime=false;
-				break;
+				for(int i=2;x*i<primes.length;i++)
+				{
+					primes[i*x]=false;
+				}
 			}
 		}
-		if(isPrime)
+		for(int i=2;i<primes.length;i++)
 		{
-			System.out.println(x+"是素数");
+			if(primes[i])
+			{
+				System.out.print(i+" ");
+			}
 		}
-		else
-		{
-			System.out.println(x+"不是素数");
-		}
-//方法二：去掉偶尔后，从3到x-1，每次加2
 	}
 }
